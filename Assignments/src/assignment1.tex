@@ -58,13 +58,13 @@
     \newpage
 
     \section{Project Goals}
-        Our group is working on a sponsored project, so our goal is to try to obtain the requested goal. Stated within the project page, the aim of this project is to develop a drone that can touch or get very close to the bottom side of the bridge using its wheels. We are looking to make at least a prototype that can go up to the ceiling and can navigate using a control system. We will be prioritizing functionality and then try to reduce the cost of the drone itself if possible.
+        The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridge using its wheels. We are looking to make at least a prototype that can go up to the ceiling and can navigate using a wireless control system. We will be prioritizing functionality, trying to get a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
 
     \section{Needs Statement}
-        The aim of this project is to develop a drone that can touch or get very close to the bottom side of the bridge using its wheels.
+        High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Drones are often deployed to conduct these examinations, but there limitations to their performance, such as “From the perspective of safety operations, the multi-rotor drone should be kept away from both the upper wall and the side wall at a distance of at least 1.5 times of the rotor diameter to prevent unexpected motions of the aircraft caused by the wall during hovering flight.” (Tanabe 344). These limitations, among others, provide a challenge to the autonomous examination of bridges and buildings.
 
     \section{Objective Statement}
-        In order to solve the proposed problem, we will be using a set of wheels at the top of the drone that runs using either the wings motor or its own sets of motors. Three sets of laser sensors will be used to estimate the distance to the ceiling, we will be using a control system in order to navigate and help stabilize the system.
+        In order to solve the proposed problem, we will be using a set of wheels at the top of the drone that allows it to closely traverse the ceiling. A set of sensors will be used to estimate the distance to the ceiling, which will be utilized in a feedback loop to control the distance from the ceiling and autonomously rise to it.
 
     \newpage
     \section{Background}
@@ -105,18 +105,18 @@
     
     \section{Objective Tree}
         \centerline{\Large \underline{\textbf{Wall Copter}}}
-        \begin{multicols}{2}
-            \underline{Climb on Flat Surfaces}
+        \begin{multicols}{3}
+            \underline{Climb on Flat Surfaces 0.45}
             
-            Walls 0.45
+            Walls 0.10
             
-            Ceilings 0.33
+            Ceilings 0.70
             
-            Underneath bridges 0.12
+            Underneath bridges 0.20
 
-            \vspace{0.5cm}
+            \columnbreak
 
-            \underline{Easy to Use}
+            \underline{Easy to Use 0.10}
 
             Limited controls 0.36
 
@@ -124,7 +124,7 @@
 
             \columnbreak
             
-            \underline{Be Stable}
+            \underline{Be Stable 0.45}
             
             Sturdy structure 0.42
             

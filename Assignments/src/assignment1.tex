@@ -13,6 +13,8 @@
 \usepackage{hanging}
 \usepackage{seqsplit}
 \usepackage{multicol}
+\usepackage{array}
+\usepackage{longtable}
 
 % Command for quick and easy bibliography
 \newcommand\hangingindent[1]{\begin{hangparas}{0.5in}{1} #1 \end{hangparas}\vspace{0.5cm}}
@@ -101,38 +103,80 @@
             \item The wall-copter must be able to climb on flat surfaces.
             \item The wall-copter should be stable.
             \item The wall-copter should be easy to use.
+            \item The wall-copter should be cost effective.
+            \item The wall-copter must be able to be controlled by a user from a distance.
         \end{enumerate}
     
     \section{Objective Tree}
         \centerline{\Large \underline{\textbf{Wall Copter}}}
         \begin{multicols}{3}
-            \underline{Climb on Flat Surfaces 0.45}
+            \noindent\underline{Climb on Flat Surfaces 0.45}
             
-            Walls 0.10
+            \noindent Walls 0.10
             
-            Ceilings 0.70
+            \noindent Ceilings 0.70
             
-            Underneath bridges 0.20
+            \noindent Underneath bridges 0.20
 
             \columnbreak
 
-            \underline{Easy to Use 0.10}
+            \noindent\underline{Easy to Use 0.10}
 
-            Limited controls 0.36
+            \noindent Limited controls 0.36
 
-            Long operating time 0.64
+            \noindent Long operating time 0.64
 
             \columnbreak
             
-            \underline{Be Stable 0.45}
+            \noindent\underline{Be Stable 0.45}
             
-            Sturdy structure 0.42
+            \noindent Sturdy structure 0.42
             
-            Accurate motion sensors 0.35
+            \noindent Accurate motion sensors 0.35
             
-            Long-lasting motors 0.23
+            \noindent Long-lasting motors 0.23
 
         \end{multicols}
+    
+    \newpage
+    \section{Engineering Requirements}
+        \begin{longtable}{ | m{4.25cm} | m{5cm}| m{5.4cm} | }
+            \hline
+            Marketing Requirement & Engineering Requirement & Justification \\\hline
+            1. Functionality &
+            The wall-copter should be able to go to the ceiling and also maneuver at the top. &
+            The product should adhere to the drone standard of being airworthiness (IEEE 1936.1-2021) \\\hline
+            2. Performance &
+            The wall-copter should have standard drone speed and also travel consistently using the wheels when at the top. &
+            The device should be able to meet mechanical, and electrical requirements (IEEE 1937.1-2020) \\\hline
+            3. Economic &
+            The device should be within a reasonable price range. &
+            Although there isn't a requirement for prices, the device should follow standards for estimating costs (IEEE 3001.4-2020)\\\hline
+            4. Energy/Power &
+            The wall-copter should be able to run for at least 1 hour and is rechargeable. &
+            The battery should follow IEEE guidelines for safety and usability (IEEE 1625-2008)\\\hline
+            5. Environmental &
+            The device should not emit any pollution and should not affect its surrounding environment too much. &
+            The device should be following all the standards and remain environmentally safe (IEEE 1680.1) \\\hline
+            6. Health \& Safety &
+            The user should follow proper instruction in order to protect the wellbeing of themselves and others around them. &
+            The user needs to be properly taught to operate the wall-copter in order to be safe for themselves and others (IEEE 1936.1-2021) \\\hline
+            7. Legal &
+            The user needs to have the proper license needed in order to operate the device. &
+            Qualification of operator is needed in order to use the product (IEEE 1936.1-2021) \\\hline
+            8. Maintainability &
+            The wall-copter should be easy to clean and replace parts on. &
+            The device have to adhere to proper functionality for easy maintenance (IEEE 1937.1-2020) \\\hline
+            9. Manufacturability &
+            The wall-copter should be easy to made with additional modification to a standard drone production. &
+            The product needs to be in line with manufacturing process control (IEEE 1625-2008) \\\hline
+            10. Reliability \& Availability &
+            The wall-copter should be able to perform all tasks along with being able to be purchased readily on the market. &
+            The device should be very reliable in order for repeated use (IEEE 1680.1) \\\hline
+            11. Usability (including user interface) &
+            The user should be able to operate the device after some basic training similar to how a normal drone should operate. &
+            As the product require data to be collected for operations, it should also follow the drone data classification (IEEE 1936.1-2021) \\\hline
+        \end{longtable}
 
     \newpage
     \section{Bibliography}

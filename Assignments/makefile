@@ -3,6 +3,7 @@
 ###############################################################################
 TEXES := $(wildcard src/*.tex) # All .tex files
 PDFS := $(TEXES:src/%.tex=out/%.pdf) # All output .pdf files
+RSRCS := $(wildcard resources/*) # All addtional resources, i.e. images
 
 ###############################################################################
 # Recipes
@@ -17,9 +18,9 @@ out/%.pdf: trash/%.pdf
 	mkdir -p out
 	cp trash/$*.pdf out/$*.pdf
 
-trash/%.pdf: src/%.tex
+trash/%.pdf: src/%.tex $(RSRCS)
 	mkdir -p trash
-	latexmk $^ -pdf -outdir=trash
+	latexmk $< -pdf -outdir=trash
 
 clean:
 	rm -rf out/* trash/*

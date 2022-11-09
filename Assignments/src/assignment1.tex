@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 \usepackage{listings}
-\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{verbatim}
 \usepackage{underscore}
@@ -12,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{hanging}
 \usepackage{seqsplit}
+\usepackage{multirow}
 \usepackage{multicol}
 \usepackage{array}
 \usepackage{longtable}
@@ -178,10 +179,105 @@
             The user should be able to operate the device after some basic training similar to how a normal drone should operate. &
             As the product require data to be collected for operations, it should also follow the drone data classification (IEEE 1936.1-2021) \\\hline
         \end{longtable}
+    
+    \newpage
+    \section{Engineering Design Alternatives}
+        \subsection{Differences and Similarities Between Designs}
+            Our three designs are very similar in principle as they all have the goal of detecting when the drone is close to the ceiling and giving feedback to the system. The designs were built upon this principle, keeping the drone from hitting the ceiling. They also have ways in which they navigate while touching the ceiling. They all share a control system in which we communicate to it through a controller, what we usually see in standard drones. Although these designs are similar, they are quite different as we try to create variations that can hopefully determine the best outcome. Their main differences are the sensors that go on them. Design 1 uses an ultrasonic sensor while Design 2 uses a camera with imaging processing and Design 3 uses lasers. Each of these variations have their own strengths and weaknesses that vary with costs. However, they all achieve the same goal of telling the drone if there's an object overtop of it (and how close) in order to avoid collision. Another difference is how the drone is going to navigate over the ceiling, with Design 1 and Design 3 both using ball bearing wheels that would just serve as a way to move. In that case, movement will be handled by the drone itself, reducing the design complexity. Design 2 uses motorized wheels, which runs using its own motor, this will allow the drone to move without compromising its vertical movements. One last difference is how they are controlled, all would have the same communications via WiFi with the main difference being that Design 1 and Design 3 using a standard drone controller, while Design 2 aims to use a phone app as its control.
+
+        \newpage
+        \subsection{Design 1}
+            This design includes an ultrasonic sensor in order to determine the distance between the drone and the ceiling/objects. We would have ball bearing wheels at the top in various selected locations. The drone would handle the movement both vertically and horizontally. In order to control the drone, we would be using a controller that communicates with the drone. The drone still would include a camera on top for image capturing.
+
+            \vspace{0.5in}
+            \centerline{\includegraphics{./resources/assignment3-Design1.schematic.drawio.pdf}}
+
+            \vspace{0.5in}
+            \begin{tabular}{|c|l|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Design 1, Level 0}} \\\hline
+                Module & Wall-Copter \\\hline
+                \multirow{3}{3cm}{Inputs}
+                    & - Power: Lithium Ion Battery\\
+                    & - User Input by Controller \\
+                    & - Sensor Data (Ultrasonic Sensor) \\
+                    \hline
+                \multirow{2}{3cm}{Outputs}
+                    & - Drone Movement \\
+                    & - Image Data Capturing \\
+                    \hline
+                \multirow{3}{3cm}{Functionality}
+                    & - Precision flight control close to the roof through sensor data. \\
+                    & - Movement along the roof with simple ball bearing wheels. \\
+                    & - Capturing image for building inspections. \\
+                    \hline
+                
+            \end{tabular}
+            
+        \newpage
+        \subsection{Design 2}
+            Using the idea of having two cameras (one on top, one built in) with an imaging system that would be used to determine the distance to the wall. Will use motorized wheels on top of the drone for horizontal navigation.
+            
+            \vspace{0.5in}
+            \centerline{\includegraphics{./resources/assignment3-Design2.schematic.drawio.pdf}}
+
+            \vspace{0.5in}
+            \begin{tabular}{|c|l|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Design 1, Level 0}} \\\hline
+                Module & Wall-Copter \\\hline
+                \multirow{3}{3cm}{Inputs}
+                    & - Power: Lithium Ion Battery\\
+                    & - User Input by Phone App \\
+                    & - Imaging Data \\
+                    \hline
+                \multirow{3}{3cm}{Outputs}
+                    & - Drone Movement \\
+                    & - Wheel Movement \\
+                    & - Image Data \& Video \\
+                    \hline
+                \multirow{4}{3cm}{Functionality}
+                    & - Precision flight control close to the roof. \\
+                    & - Capturing images and using them for computer vision flight control. \\
+                    & - Live feedback of data through WiFi. \\
+                    & - Navigation on the roof through motorized wheels. \\
+                    \hline
+                
+            \end{tabular}
+
+        \newpage
+        \subsection{Design 3}
+            This design uses lasers placed in triangular configuration to triangulate the correct distance between the drone and the ceiling. It will also use ball bearing wheels as a way safely and efficiently navigate the ceiling. The drone will also be controlled by a standard controller that comes with the product.
+
+            \vspace{0.5in}
+            \centerline{\includegraphics{./resources/assignment3-Design3.schematic.drawio.pdf}}
+
+            \vspace{0.5in}
+            \begin{tabular}{|c|l|}
+                \hline
+                \multicolumn{2}{|c|}{\textbf{Design 1, Level 0}} \\\hline
+                Module & Wall-Copter \\\hline
+                \multirow{3}{3cm}{Inputs}
+                    & - Power: Lithium Ion Battery\\
+                    & - User Input by Controller \\
+                    & - Laser Sensors \\
+                    \hline
+                \multirow{2}{3cm}{Outputs}
+                    & - Drone Movement \\
+                    & - Image Data Capturing \\
+                    \hline
+                \multirow{3}{3cm}{Functionality}
+                    & - Using sensor data for stabilized flight control close to the roof. \\
+                    & - Capturing image for building inspections. \\
+                    & - Using ball bearing wheels to maneuver close/on the roof. \\
+                    \hline
+                
+            \end{tabular}
 
     \newpage
     \section{Bibliography}
     \centerline{\large \underline{\textbf{Works Cited}}} \vspace{0.5cm}
+        % TODO: Switch this to using biber
 
         \hangingindent{Tanabe, Sugiura, M., Aoyama, T., Sugawara, H., Sunada, S., Yonezawa, K., \& Tokutake, H. (2018). Multiple Rotors Hovering Near an Upper or a Side Wall. Journal of Robotics and Mechatronics, 30(3), 344-353. \seqsplit{https://doi.org/10.20965/jrm.2018.p0344}}
 
@@ -196,113 +292,130 @@
         \hangingindent{Karanja, P. (2022, February 24). Guide to how much Drones Cost (2022). Droneblog. Retrieved October 2, 2022, from \seqsplit{https://www.droneblog.com/drones-cost/\#:~:text=The\%20average\%20cost\%20of\%20drones,need\%20to\%20spend\%20on\%20it.}}
     
     \newpage
-    \section{Appendix A}
-        \textbf{\large Questions and Paraphrased Answers with Project Sponsor Professor Cetin}
-            \newcommand{\qna}[2]{
-                \noindent Q. #1
+    \section{Appendices}
+        \subsection{Appendix A}
+            \subsubsection{Questions and Paraphrased Answers with Project Sponsor Professor Cetin}
+            % \textbf{\large Questions and Paraphrased Answers with Project Sponsor Professor Cetin}
+                \newcommand{\qna}[2]{
+                    \noindent Q. #1
 
-                A. #2
-                
+                    A. #2
+                    
+                    \vspace{0.5cm}
+
+                }
+
+                \qna
+                {When it says two motors, does that include motors for steering? i.e. a cheap servo motor to point to a primary motor?}
+                {Two motors as in two separate movement systems, movement and navigation}
+                \qna
+                {Is the drone expected to fly to the roof or wall ? Or is it supposed to navigate through the wall to the roof?}
+                {To the roof.}
+                \qna
+                {Is there an ideal budget range?}
+                {As cheap as possible, the University has a budget.}
+                \qna
+                {What is the expected size range? As small as functionally possible? Breadbox? 1m cube?}
+                {Low cost -\> Small}
+                \qna
+                {Are there expected use cases aside from bridge and high-rise building inspection?}
+                {Not yet considered, similar products do not yet exist.}
+                \qna
+                {If this is being used for inspections it presumably should have a camera, correct?}
+                {Yes.}
+                \qna
+                {Other than the ones listed, what other type of terrains did you have in mind when you made this project?}
+                {}
+                \qna
+                {What kind of model do you have in mind? Since there are some specifications listed for the wheels amount and propeller types.}
+                {Similar to DJI Avata Pro-View}
+                \qna
+                {What kind of consumer/user did you have in mind when you came up with the project idea?}
+                {Not yet considered, similar products do not yet exist.}
+                \qna
+                {Who is the intended user other than bridge and high-rise inspectors?}
+                {Not yet known. Maybe people who want to clean the ceiling of large auditoriums.}
+                \qna
+                {What do you anticipate to be the biggest challenge to overcome?}
+                {The control system required in order to keep the drone balanced once it touches the ceiling. More is required to prevent the drone from crashing.}
+                \qna
+                {How much deviation from the original prompt is acceptable? We are mainly concerned with the number of motors, but just in general}
+                {Whenever we have a design in mind, we can check with the professor for approval of the design.}
+                \qna
+                {With regards to testing and demonstration, are there any recommended environments? Will any licenses be required? Do you know what the university's policy on using the Rec Center's rockwall as a control environment would be?}
+                {The ECE labs and makerspace}
+                \qna
+                {What is your specialty and how does that relate to this?}
+                {Image processing and if we can get a camera working that would be great}
+
+                \noindent Extra info:
+
+                If this gets good enough to be patented: https://otm.uic.edu/uic-community/how-to-disclose/
+
+                Recommended courses: ece uic control
+            
+            % \vspace{1cm}\noindent\textbf{\large Original Sponsored Project Prompt}
+            \subsubsection{Original Sponsored Project Prompt}
+
+                \noindent\textbf{\large Project Title:}
+
+                Wall-copter: Drone with wheels on its top that can navigate on the ceiling or walls.
+
+                \noindent\textbf{\large Project Sponsor(s) Name and Email:}
+
+                Ahmet Enis Cetin, aecyy@uic.edu
+
+                \noindent\textbf{\large Description of Project:}
+
+                Drones are used for bridge inspection and high-rise building inspection. However, they shake in the air and wind and camera and sensor measurements shake because of shaking. The aim of this project is to develop a drone that can touch or get very close to the bottom side of the bridge using its wheels.
+
+                The propellors of the drone will push the drone up and the drone will use its three or four wheels to wonder on the wall, high ceiling or at the bottom side of a bridge. The drone can have two motors. One of the engines will power the propellers the other engine will power the wheels. You should use a single controller to control the system.
+
+                You may be required to sign an NDA or relinquish IP rights for this project.
+        
+        \newpage
+        \subsection{Appendix B}
+            \newcommand{\ieeestd}[3]{
+                \noindent\textbf{#1} \\
+                \noindent\url{#2} \\
+                \noindent#3 \\
                 \vspace{0.5cm}
 
             }
 
-            \qna
-            {When it says two motors, does that include motors for steering? i.e. a cheap servo motor to point to a primary motor?}
-            {Two motors as in two separate movement systems, movement and navigation}
-            \qna
-            {Is the drone expected to fly to the roof or wall ? Or is it supposed to navigate through the wall to the roof?}
-            {To the roof.}
-            \qna
-            {Is there an ideal budget range?}
-            {As cheap as possible, the University has a budget.}
-            \qna
-            {What is the expected size range? As small as functionally possible? Breadbox? 1m cube?}
-            {Low cost -\> Small}
-            \qna
-            {Are there expected use cases aside from bridge and high-rise building inspection?}
-            {Not yet considered, similar products do not yet exist.}
-            \qna
-            {If this is being used for inspections it presumably should have a camera, correct?}
-            {Yes.}
-            \qna
-            {Other than the ones listed, what other type of terrains did you have in mind when you made this project?}
-            {}
-            \qna
-            {What kind of model do you have in mind? Since there are some specifications listed for the wheels amount and propeller types.}
-            {Similar to DJI Avata Pro-View}
-            \qna
-            {What kind of consumer/user did you have in mind when you came up with the project idea?}
-            {Not yet considered, similar products do not yet exist.}
-            \qna
-            {Who is the intended user other than bridge and high-rise inspectors?}
-            {Not yet known. Maybe people who want to clean the ceiling of large auditoriums.}
-            \qna
-            {What do you anticipate to be the biggest challenge to overcome?}
-            {The control system required in order to keep the drone balanced once it touches the ceiling. More is required to prevent the drone from crashing.}
-            \qna
-            {How much deviation from the original prompt is acceptable? We are mainly concerned with the number of motors, but just in general}
-            {Whenever we have a design in mind, we can check with the professor for approval of the design.}
-            \qna
-            {With regards to testing and demonstration, are there any recommended environments? Will any licenses be required? Do you know what the university's policy on using the Rec Center's rockwall as a control environment would be?}
-            {The ECE labs and makerspace}
-            \qna
-            {What is your specialty and how does that relate to this?}
-            {Image processing and if we can get a camera working that would be great}
-
-            \noindent Extra info:
-
-            If this gets good enough to be patented: https://otm.uic.edu/uic-community/how-to-disclose/
-
-            Recommended courses: ece uic control
+            \ieeestd
+            {IEEE 1936.1-2021 IEEE Standard for Drone Applications Framework}
+            {https://standards.ieee.org/ieee/1936.1}
+            {The drone safety and management requirements include airworthiness, airspace and air traffic requirements, qualification of operators, qualification of personnel, insurance, confidentiality, and others. The general operation process is detailed.}
+            \ieeestd
+            {IEEE 1625-2008 IEEE Standard for Rechargeable Batteries for Multi-Cell Mobile Computing Devices}
+            {https://standards.ieee.org/ieee/1625}
+            {This standard establishes criteria for design analysis for qualification, quality, and reliability of rechargeable battery systems for multi-cell mobile computing devices. The following are addressed: qualification process; manufacturing process control; energy capacity and demand management; levels of management and control in the battery systems; and current and planned lithium-based battery chemistries, packaging technologies, and considerations for end-user notification.}
+            \ieeestd
+            {IEEE 1937.1-2020 IEEE Standard Interface Requirements and Performance Characteristics of Payload Devices in Drones}
+            {https://standards.ieee.org/ieee/1937.1/7456/}
+            {General interface requirements and performance characteristics of payload devices in drones are presented. The drone payload interfaces are described in three categories: mechanical interface, electrical interface, and data interface.}
+            \ieeestd
+            {IEEE 3001.4-2020 IEEE Recommended Practice for Estimating the Costs of Industrial and Commercial Power Systems}
+            {https://standards.ieee.org/ieee/3001.4/6808/}
+            {Described in this recommended practice are methods for estimating the costs of industrial and commercial power systems, both new and those undergoing expansion or modernization. This recommended practice is restricted to the development of the relative capital cost of industrial and commercial power distribution systems.}
+            \ieeestd
+            {IEEE 1680.1 - Environmental Assessment of Computers, Tablets and Monitors}
+            {https://rohs.ca/news/2018/04/16/ieee-1680-1-environmental-assessment-of-computers-tablets-and-monitors/}
+            {The requirements take into account: substance management, materials selection, design for end of life, product longevity/life-cycle extension, energy conservation, end-of-life management, packaging, life cycle assessment and carbon footprint, corporate environmental performance, and corporate social responsibility.}
         
-        \vspace{1cm}\noindent\textbf{\large Original Sponsored Project Prompt}
-
-            \noindent\textbf{Project Title:}
-
-            Wall-copter: Drone with wheels on its top that can navigate on the ceiling or walls.
-
-            \noindent\textbf{Project Sponsor(s) Name and Email:}
-
-            Ahmet Enis Cetin, aecyy@uic.edu
-
-            \noindent\textbf{Description of Project:}
-
-            Drones are used for bridge inspection and high-rise building inspection. However, they shake in the air and wind and camera and sensor measurements shake because of shaking. The aim of this project is to develop a drone that can touch or get very close to the bottom side of the bridge using its wheels.
-
-            The propellors of the drone will push the drone up and the drone will use its three or four wheels to wonder on the wall, high ceiling or at the bottom side of a bridge. The drone can have two motors. One of the engines will power the propellers the other engine will power the wheels. You should use a single controller to control the system.
-
-            You may be required to sign an NDA or relinquish IP rights for this project.
-    
-    \newpage
-    \section{Appendix B}
-        \newcommand{\ieeestd}[3]{
-            \noindent\textbf{#1} \\
-            \noindent\url{#2} \\
-            \noindent#3 \\
-            \vspace{0.5cm}
-
-        }
-
-        \ieeestd
-        {IEEE 1936.1-2021 IEEE Standard for Drone Applications Framework}
-        {https://standards.ieee.org/ieee/1936.1}
-        {The drone safety and management requirements include airworthiness, airspace and air traffic requirements, qualification of operators, qualification of personnel, insurance, confidentiality, and others. The general operation process is detailed.}
-        \ieeestd
-        {IEEE 1625-2008 IEEE Standard for Rechargeable Batteries for Multi-Cell Mobile Computing Devices}
-        {https://standards.ieee.org/ieee/1625}
-        {This standard establishes criteria for design analysis for qualification, quality, and reliability of rechargeable battery systems for multi-cell mobile computing devices. The following are addressed: qualification process; manufacturing process control; energy capacity and demand management; levels of management and control in the battery systems; and current and planned lithium-based battery chemistries, packaging technologies, and considerations for end-user notification.}
-        \ieeestd
-        {IEEE 1937.1-2020 IEEE Standard Interface Requirements and Performance Characteristics of Payload Devices in Drones}
-        {https://standards.ieee.org/ieee/1937.1/7456/}
-        {General interface requirements and performance characteristics of payload devices in drones are presented. The drone payload interfaces are described in three categories: mechanical interface, electrical interface, and data interface.}
-        \ieeestd
-        {IEEE 3001.4-2020 IEEE Recommended Practice for Estimating the Costs of Industrial and Commercial Power Systems}
-        {https://standards.ieee.org/ieee/3001.4/6808/}
-        {Described in this recommended practice are methods for estimating the costs of industrial and commercial power systems, both new and those undergoing expansion or modernization. This recommended practice is restricted to the development of the relative capital cost of industrial and commercial power distribution systems.}
-        \ieeestd
-        {IEEE 1680.1 - Environmental Assessment of Computers, Tablets and Monitors}
-        {https://rohs.ca/news/2018/04/16/ieee-1680-1-environmental-assessment-of-computers-tablets-and-monitors/}
-        {The requirements take into account: substance management, materials selection, design for end of life, product longevity/life-cycle extension, energy conservation, end-of-life management, packaging, life cycle assessment and carbon footprint, corporate environmental performance, and corporate social responsibility.}
-
+        \newpage
+        \subsection{Appendix C}
+            \subsubsection{General Concept Map}
+                \centerline{\includegraphics{./resources/assignment3-general_concept_map.drawio.pdf}}
+            
+            \subsubsection{Alternative Design 1 Concept Map}
+                \centerline{\includegraphics{./resources/assignment3-Design1.concept_map.drawio.pdf}}
+            
+            \subsubsection{Alternative Design 2 Concept Map}
+                \centerline{\includegraphics{./resources/assignment3-Design2.concept_map.drawio.pdf}}
+            
+            \subsubsection{Alternative Design 3 Concept Map}
+                \centerline{\includegraphics{./resources/assignment3-Design3.concept_map.drawio.pdf}}
+        
 \end{document}

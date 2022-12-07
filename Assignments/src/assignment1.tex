@@ -29,8 +29,8 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{Wall Guys: Assignment 4}
-\fancyhead[L]{\leftmark}
+\fancyhead[R]{Wall Guys: Assignment 5}
+\fancyhead[L]{}
 \fancyfoot[C]{\thepage}
 
 \begin{document}
@@ -38,16 +38,23 @@
     \begin{titlepage}
         \begin{center}
             \vspace*{1cm}
-            \Huge\textbf{ECE 396: Assignment 4}
+            \Huge\textbf{ECE 396: Assignment 5}
 
                 \vspace{0.5cm}
-                \LARGE Project Selection \& Problem Scoping
+                \LARGE Wallcopter Project
     
             \vspace{1.5cm}
             \textbf{Team 13: Wall Guys}
 
                 \vspace{0.5cm}
                 Tien Dao, Hardik Goel, Jaden Mossman, and Anand Pudi
+
+                \Large
+                Sponsor: Dr Ahmet Enis Cetin
+
+                Instructor: Dr Matthew Alonso
+
+                \LARGE
 
             \vfill             
             \includegraphics[width=0.4\textwidth]{resources/uic_logo.png}
@@ -67,18 +74,18 @@
     \section{Overview}
 
         \subsection{Project Goals}
-            The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridge using its wheels. We are looking to make at least a prototype that can go up to the ceiling and can navigate using a wireless control system. We will be prioritizing functionality, trying to get a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
+            The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridge using its wheels. We are looking to make at least a prototype that can go up to the ceiling and can navigate via a wireless control system. Our priority is as follows: main focus on functionality, producing a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
 
         \subsection{Needs Statement}
-            High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Drones are often deployed to conduct these examinations, but there limitations to their performance, such as “From the perspective of safety operations, the multi-rotor drone should be kept away from both the upper wall and the side wall at a distance of at least 1.5 times of the rotor diameter to prevent unexpected motions of the aircraft caused by the wall during hovering flight.” (Tanabe 344). These limitations, among others, provide a challenge to the autonomous examination of bridges and buildings.
+            High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Drones are often deployed to conduct these examinations, but there are limitations to their performance when coming into close contact with those surfaces. Another limitation is the lack of stable connection when the drone is a certain distance away from the user. These limitations, among others, provide a challenge to the autonomous examination of bridges and buildings.
 
         \subsection{Objective Statement}
-            In order to solve the proposed problem, we will be using a set of wheels at the top of the drone that allows it to closely traverse the ceiling. A set of sensors will be used to estimate the distance to the ceiling, which will be utilized in a feedback loop to control the distance from the ceiling and autonomously rise to it.
+            The objective of this project is the design of a drone that is able to navigate in a stable manner while remaining its set distance to the ceiling or object it is touching. The drone will have a camera installed that can capture images or give live feed for inspection purposes. Sensors will be used in order to calculate and articulate the distance between the drone and the ceiling. Standard wireless communication will be through the microcontroller that allows the user to control the device from a distance.
 
         \newpage
         \subsection{Background}
             \begin{enumerate}[label=\Alph*.]
-                \item The basic concept that lays behind this wall-copter relies on the control system that keeps the copter stable to prevent collision or unintended side effect when approaching ceilings or walls. The current limitation lays on the unintended shifts of the blade speed when the copter gets too close to the wall's surface. The other factor is the difficulty of control when the drone gets too close to such a surface. Surprisingly, there don't seem to be any current remedies that exist in the market right now so we do not have a way to compare our project to it. This, in turn, allows us to have a fairly unique product without competitors. One thing to note is that this runs with the assumptions of there being no other similar projects under research. To our knowledge and research, there seems to be no patents that exist of this product that we are trying to develop, strange as it seems to be. This allows us to have an open field with no current competitors.
+                \item The basic concept that lays behind this wall-copter relies on the control system that keeps the copter stable to prevent collision or unintended side effect when approaching ceilings or walls. The current limitation lies on the unintended shifts of the blade speed when the copter gets too close to the wall's surface. The other factor is the difficulty of control when the drone gets too close to such a surface. Surprisingly, there don't seem to be any current remedies that exist in the market right now, so we do not have a way to compare our project to it. Still, there are current market competitors who offer drones with strong frames that are used for inspections using LiDAR mapping technology. Those drones, whoever do not approach the ceilings or navigate close to the effect of rotors being sucked into a surface. They have to remain within a distance of 1.5 times the size of the rotor from the upper wall to remain safe and stable [1]. There are other approaches to keeping the drone stable within these areas as there are studies focused on navigation via tilting the drone against the wall in order to ascend in a stable manner [2]. This research focuses on scaling vertically using the Tilt Motor Mechanism that results in some successes in keeping the drone stabilized enough for certain tasks. An existing prototype exists for that research, but it does not seem like they have a focus on releasing that product into the market [2]. One other alternative approach done by students from Shandong University of Science and Technology suggests creating a drone that would stick to walls/ceiling similar to geckos [4]. This particular design focuses on solving the problem of inspection when natural disasters occur, which is only similar to our objective but the designs would be very beneficial to keep in mind. Once again, this is only a test product, not meant for release in the market and would not be our direct competitor.
                 
                 Articles that relates to our topic (no patent due to the reason explained above): 
                 \begin{itemize}[label=]
@@ -86,7 +93,7 @@
                     \item Experimentation on a wall climbing drone:\\\url{https://ieeexplore-ieee-org.proxy.cc.uic.edu/document/8588997}
                 \end{itemize}
 
-                \item Our background of this project is very clear from the beginning since it's a sponsored project, we still interviewed the professor to answer more questions we had. From this, we understand that the professor wants a product that currently does not exist on the market and will be answering the demand that some have for drones.
+                \item Our background of this project is very clear from the beginning since it's a sponsored project, we still interviewed the professor to answer more questions we had. From this, we understand that the professor wants a product that currently does have strong competitors within the market space. 
                 \begin{enumerate}[label=\roman*.]
                     \item Functionality: The goal is to make a drone which navigates in high places without the current problems (shaking, height limit close to ceiling, stability).
                     \item Appearance: It will look just like a common drone that currently exists in the market except with add-ons that would assist it with our goal.
@@ -99,19 +106,23 @@
                     \item User training needs: It is safe to assume that there will be a learning curve to the device in addition to learning how to navigate using the extra set of wheels on top. Such a process can be learned just like a normal drone and should still be able to learn with some time and effort.
                     \item Government regulations and licensing: According to Part 107 of the FAA, any drone that weights over 250g needs to be registered even if it's only for commercial purposes. This process shouldn't be too difficult and there isn't too much of a barrier to obtain one for use.
                     \item Industry standards: We follow the rules given to all drones. Since our product is newer, we don't know what other standards might be applied to it. So currently we'll be abiding by the current drone industry standards.
-                    \item Safety issues: The drone has the issue of crashing into high terrains and falling onto passerbys below. There is also potential that objects that the wheels made contact with on the ceiling could potentially break and fall. The device has the same safety problems as normal drones, only with additional unforeseen safety issues that come with driving it on the wall/ceiling.
+                    \item Safety issues: The drone has the issue of crashing into high terrains and falling onto passerby below. There is also potential that objects that the wheels made contact with on the ceiling could potentially break and fall. The device has the same safety problems as normal drones, only with additional unforeseen safety issues that come with driving it on the wall/ceiling.
                     \item Environmental Concerns: This device should be fairly safe environmentally to operate, with a low carbon footprint. There are still concerns that when it crashes or is lost, if not recovered, it would be non biodegradable as it is made out of plastics and other electronic components. The battery that is used to operate the drone is also bad for the environment if not recycled correctly.
                 \end{enumerate}
             \end{enumerate}
         \newpage
 
         \subsection{Marketing Requirements}
+            For our marketing requirements, we focus on the standard requirements that most drones have. Additionally, we consider its cost effectiveness along with the development cost of our design when making our requirements. We also include data from the interview that we had with our sponsor when making considerations of our marketing requirements.
             \begin{enumerate}[label=\arabic*.]
                 \item The wall-copter must be able to climb on flat surfaces.
                 \item The wall-copter should be stable.
                 \item The wall-copter should be easy to use.
-                \item The wall-copter should be cost effective.
+                \item The wall-copter should be cost-effective and easy to maintain.
                 \item The wall-copter must be able to be controlled by a user from a distance.
+                \item The wall-copter should be able to operate within a reasonable amount of time.
+                \item The wall-copter should have minimal environmental impact.
+                \item The wall-copter should follow proper regulations policies.
             \end{enumerate}
         
         \subsection{Objective Tree}
@@ -150,37 +161,37 @@
         \begin{longtable}{ | m{4.25cm} | m{5cm}| m{5.4cm} | }
             \hline
             Marketing Requirement & Engineering Requirement & Justification \\\hline
-            1. Functionality &
+            1,2 &
             The wall-copter should be able to go to the ceiling and also maneuver at the top. &
             The product should adhere to the drone standard of being airworthiness (IEEE 1936.1-2021) \\\hline
-            2. Performance &
+            2 &
             The wall-copter should have standard drone speed and also travel consistently using the wheels when at the top. &
             The device should be able to meet mechanical, and electrical requirements (IEEE 1937.1-2020) \\\hline
-            3. Economic &
+            4 &
             The device should be within a reasonable price range. &
             Although there isn't a requirement for prices, the device should follow standards for estimating costs (IEEE 3001.4-2020)\\\hline
-            4. Energy/Power &
+            6 &
             The wall-copter should be able to run for at least 1 hour and is rechargeable. &
             The battery should follow IEEE guidelines for safety and usability (IEEE 1625-2008)\\\hline
-            5. Environmental &
+            7 &
             The device should not emit any pollution and should not affect its surrounding environment too much. &
             The device should be following all the standards and remain environmentally safe (IEEE 1680.1) \\\hline
-            6. Health \& Safety &
+            3,5 &
             The user should follow proper instruction in order to protect the wellbeing of themselves and others around them. &
             The user needs to be properly taught to operate the wall-copter in order to be safe for themselves and others (IEEE 1936.1-2021) \\\hline
-            7. Legal &
+            8 &
             The user needs to have the proper license needed in order to operate the device. &
             Qualification of operator is needed in order to use the product (IEEE 1936.1-2021) \\\hline
-            8. Maintainability &
+            4 &
             The wall-copter should be easy to clean and replace parts on. &
             The device have to adhere to proper functionality for easy maintenance (IEEE 1937.1-2020) \\\hline
-            9. Manufacturability &
-            The wall-copter should be easy to made with additional modification to a standard drone production. &
+            4 &
+            The wall-copter should be easy to make with additional modification to a standard drone production. &
             The product needs to be in line with manufacturing process control (IEEE 1625-2008) \\\hline
-            10. Reliability \& Availability &
+            1,2,3 &
             The wall-copter should be able to perform all tasks along with being able to be purchased readily on the market. &
             The device should be very reliable in order for repeated use (IEEE 1680.1) \\\hline
-            11. Usability (including user interface) &
+            3,5 (including user interface) &
             The user should be able to operate the device after some basic training similar to how a normal drone should operate. &
             As the product require data to be collected for operations, it should also follow the drone data classification (IEEE 1936.1-2021) \\\hline
         \end{longtable}
@@ -326,17 +337,17 @@
     \centerline{\large \underline{\textbf{Works Cited}}} \vspace{0.5cm}
         % TODO: Switch this to using biber
 
-        \hangingindent{Tanabe, Sugiura, M., Aoyama, T., Sugawara, H., Sunada, S., Yonezawa, K., \& Tokutake, H. (2018). Multiple Rotors Hovering Near an Upper or a Side Wall. Journal of Robotics and Mechatronics, 30(3), 344-353. \seqsplit{https://doi.org/10.20965/jrm.2018.p0344}}
+        \hangingindent{[1] Tanabe, Sugiura, M., Aoyama, T., Sugawara, H., Sunada, S., Yonezawa, K., \& Tokutake, H. (2018). Multiple Rotors Hovering Near an Upper or a Side Wall. Journal of Robotics and Mechatronics, 30(3), 344-353. \seqsplit{https://doi.org/10.20965/jrm.2018.p0344}}
 
-        \hangingindent{Myeong, \& Myung, H. (2019). Development of a Wall-Climbing Drone Capable of Vertical Soft Landing Using a Tilt-Rotor Mechanism. IEEE Access, 7, 4868-4879. \seqsplit{https://doi.org/10.1109/ACCESS.2018.2889686}}
+        \hangingindent{[2]  Myeong, \& Myung, H. (2019). Development of a Wall-Climbing Drone Capable of Vertical Soft Landing Using a Tilt-Rotor Mechanism. IEEE Access, 7, 4868-4879. \seqsplit{https://doi.org/10.1109/ACCESS.2018.2889686}}
 
-        \hangingindent{Mattar, \& Kalai, R. (2018). Development of a Wall-Sticking Drone for Non-Destructive Ultrasonic and Corrosion Testing. Drones (Basel), 2(1), 8-. \seqsplit{https://doi.org/10.3390/drones2010008}}
+        \hangingindent{[3]  Mattar, \& Kalai, R. (2018). Development of a Wall-Sticking Drone for Non-Destructive Ultrasonic and Corrosion Testing. Drones (Basel), 2(1), 8-. \seqsplit{https://doi.org/10.3390/drones2010008}}
 
-        \hangingindent{Guo, Zhang, J., Ju, Y., \& Guo, X. (2018). Climbing Reconnaissance Drone Design. IOP Conference Series. Materials Science and Engineering, 452(4), 42060-. \seqsplit{https://doi.org/10.1088/1757-899X/452/4/042060}}
+        \hangingindent{[4]  Guo, Zhang, J., Ju, Y., \& Guo, X. (2018). Climbing Reconnaissance Drone Design. IOP Conference Series. Materials Science and Engineering, 452(4), 42060-. \seqsplit{https://doi.org/10.1088/1757-899X/452/4/042060}}
 
-        \hangingindent{Become a drone pilot. Become a Drone Pilot | Federal Aviation Administration. (n.d.). Retrieved October 2, 2022, from \seqsplit{https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot\#:~:text=In\%20order\%20to\%20fly\%20your,procedures\%20for\%20safely\%20flying\%20drones.}}
+        \hangingindent{[5] Become a drone pilot. Become a Drone Pilot | Federal Aviation Administration. (n.d.). Retrieved October 2, 2022, from \seqsplit{https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot\#:~:text=In\%20order\%20to\%20fly\%20your,procedures\%20for\%20safely\%20flying\%20drones.}}
 
-        \hangingindent{Karanja, P. (2022, February 24). Guide to how much Drones Cost (2022). Droneblog. Retrieved October 2, 2022, from \seqsplit{https://www.droneblog.com/drones-cost/\#:~:text=The\%20average\%20cost\%20of\%20drones,need\%20to\%20spend\%20on\%20it.}}
+        \hangingindent{[6] Karanja, P. (2022, February 24). Guide to how much Drones Cost (2022). Droneblog. Retrieved October 2, 2022, from \seqsplit{https://www.droneblog.com/drones-cost/\#:~:text=The\%20average\%20cost\%20of\%20drones,need\%20to\%20spend\%20on\%20it}}
     
     \newpage
     \section{Appendices}

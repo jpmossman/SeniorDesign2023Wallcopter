@@ -74,7 +74,7 @@
     \section{Overview}
 
         \subsection{Project Goals}
-            The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridge using its wheels. We are looking to make at least a prototype that can go up to the ceiling and can navigate via a wireless control system. Our priority is as follows: main focus on functionality, producing a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
+            The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridges or high rise buildings for inspection purposes. We are looking to make at least a prototype that can go up to the ceilings of most areas and can navigate via a wireless control system. Our priority is as follows: main focus on functionality, producing a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
 
         \subsection{Needs Statement}
             High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Drones are often deployed to conduct these examinations, but there are limitations to their performance when coming into close contact with those surfaces. Another limitation is the lack of stable connection when the drone is a certain distance away from the user. These limitations, among others, provide a challenge to the autonomous examination of bridges and buildings.
@@ -87,12 +87,8 @@
             \begin{enumerate}[label=\Alph*.]
                 \item The basic concept that lays behind this wall-copter relies on the control system that keeps the copter stable to prevent collision or unintended side effect when approaching ceilings or walls. The current limitation lies on the unintended shifts of the blade speed when the copter gets too close to the wall's surface. The other factor is the difficulty of control when the drone gets too close to such a surface. Surprisingly, there don't seem to be any current remedies that exist in the market right now, so we do not have a way to compare our project to it. Still, there are current market competitors who offer drones with strong frames that are used for inspections using LiDAR mapping technology. Those drones, whoever do not approach the ceilings or navigate close to the effect of rotors being sucked into a surface. They have to remain within a distance of 1.5 times the size of the rotor from the upper wall to remain safe and stable [1]. There are other approaches to keeping the drone stable within these areas as there are studies focused on navigation via tilting the drone against the wall in order to ascend in a stable manner [2]. This research focuses on scaling vertically using the Tilt Motor Mechanism that results in some successes in keeping the drone stabilized enough for certain tasks. An existing prototype exists for that research, but it does not seem like they have a focus on releasing that product into the market [2]. One other alternative approach done by students from Shandong University of Science and Technology suggests creating a drone that would stick to walls/ceiling similar to geckos [4]. This particular design focuses on solving the problem of inspection when natural disasters occur, which is only similar to our objective but the designs would be very beneficial to keep in mind. Once again, this is only a test product, not meant for release in the market and would not be our direct competitor.
                 
-                Articles that relates to our topic (no patent due to the reason explained above): 
-                \begin{itemize}[label=]
-                    \item The effects of walls on motors:\\\url{https://www-fujipress-jp.proxy.cc.uic.edu/jrm/rb/robot003000030344/}
-                    \item Experimentation on a wall climbing drone:\\\url{https://ieeexplore-ieee-org.proxy.cc.uic.edu/document/8588997}
-                \end{itemize}
-
+                \indent Upon further background research, we found out that a license would be required in order to fly certain types of drone [5]. Luckily, a license is not required for small indoor drones that are used for commercial purposes. So initial testing using indoor labs will not require such a license but will be different for outdoor tests. When looking into the drone market, typical drone prices vary quite a bit, from a very cheap price of 30 dollars that can go up to thousands [6]. Usually the bigger the drone and more functionality it offers, the more expensive the product will be. So in order to remain competitive, our drone need to be within a reasonable range of around 50-250 dollars, the amount that our budget would be allocated.
+                
                 \item Our background of this project is very clear from the beginning since it's a sponsored project, we still interviewed the professor to answer more questions we had. From this, we understand that the professor wants a product that currently does have strong competitors within the market space. 
                 \begin{enumerate}[label=\roman*.]
                     \item Functionality: The goal is to make a drone which navigates in high places without the current problems (shaking, height limit close to ceiling, stability).
@@ -126,9 +122,10 @@
             \end{enumerate}
         
         \subsection{Objective Tree}
+            There were many considerations when it came to our Objective Tree, we decided that there should be a split focus among maneuverability and stability, which both had high percentages. The ease of use would come as an extra priority in order to make it easier for our users to operate. The diagram below shows all the sub-focuses and their priority within each category.
             \centerline{\Large \underline{\textbf{Wall Copter}}}
             \begin{multicols}{3}
-                \noindent\underline{Climb on Flat Surfaces 0.45}
+                \noindent\underline{Traversing Ceilings / Rough Surfaces 0.45}
                 
                 \noindent Walls 0.10
                 
@@ -138,7 +135,7 @@
 
                 \columnbreak
 
-                \noindent\underline{Easy to Use 0.10}
+                \noindent\underline{Ease of Use 0.10}
 
                 \noindent Limited controls 0.36
 
@@ -162,34 +159,34 @@
             \hline
             Marketing Requirement & Engineering Requirement & Justification \\\hline
             1,2 &
-            The wall-copter should be able to go to the ceiling and also maneuver at the top. &
+            The wall-copter should be able to go to the heights of the ceiling, usually around at 20ft. &
             The product should adhere to the drone standard of being airworthiness (IEEE 1936.1-2021) \\\hline
             2 &
-            The wall-copter should have standard drone speed and also travel consistently using the wheels when at the top. &
+            The wall-copter should have standard drone speed of around 20 mph tops. &
             The device should be able to meet mechanical, and electrical requirements (IEEE 1937.1-2020) \\\hline
             4 &
-            The device should be within a reasonable price range. &
+            The device should be within a reasonable price range of around \$50-\$250. &
             Although there isn't a requirement for prices, the device should follow standards for estimating costs (IEEE 3001.4-2020)\\\hline
             6 &
-            The wall-copter should be able to run for at least 1 hour and is rechargeable. &
+            The wall-copter should be able to run for at least 15-20 minutes and is rechargeable. &
             The battery should follow IEEE guidelines for safety and usability (IEEE 1625-2008)\\\hline
             7 &
             The device should not emit any pollution and should not affect its surrounding environment too much. &
-            The device should be following all the standards and remain environmentally safe (IEEE 1680.1) \\\hline
+            The device should be following all the standards and remain environmentally sustainable (IEEE 1680.1) \\\hline
             3,5 &
-            The user should follow proper instruction in order to protect the wellbeing of themselves and others around them. &
+            Users should be able to follow FAA regulations when operating the drone. &
             The user needs to be properly taught to operate the wall-copter in order to be safe for themselves and others (IEEE 1936.1-2021) \\\hline
             8 &
             The user needs to have the proper license needed in order to operate the device. &
             Qualification of operator is needed in order to use the product (IEEE 1936.1-2021) \\\hline
             4 &
-            The wall-copter should be easy to clean and replace parts on. &
+            The drone blades and parts such as batteries and microcontroller/ sensors should be easily disconnected in order to clean/replace. &
             The device have to adhere to proper functionality for easy maintenance (IEEE 1937.1-2020) \\\hline
             4 &
             The wall-copter should be easy to make with additional modification to a standard drone production. &
             The product needs to be in line with manufacturing process control (IEEE 1625-2008) \\\hline
             1,2,3 &
-            The wall-copter should be able to perform all tasks along with being able to be purchased readily on the market. &
+            The wall-copter should be able to perform all tasks while maintaining a good lifespan of 150-800 flight hours. &
             The device should be very reliable in order for repeated use (IEEE 1680.1) \\\hline
             3,5 (including user interface) &
             The user should be able to operate the device after some basic training similar to how a normal drone should operate. &
@@ -198,10 +195,6 @@
     
     \newpage
     \section{Engineering Design Alternatives}
-        \subsection{Differences and Similarities Between Designs}
-            Our three designs are very similar in principle as they all have the goal of detecting when the drone is close to the ceiling and giving feedback to the system. The designs were built upon this principle, keeping the drone from hitting the ceiling. They also have ways in which they navigate while touching the ceiling. They all share a control system in which we communicate to it through a controller, what we usually see in standard drones. Although these designs are similar, they are quite different as we try to create variations that can hopefully determine the best outcome. Their main differences are the sensors that go on them. Design 1 uses an ultrasonic sensor while Design 2 uses a camera with imaging processing and Design 3 uses lasers. Each of these variations have their own strengths and weaknesses that vary with costs. However, they all achieve the same goal of telling the drone if there's an object overtop of it (and how close) in order to avoid collision. Another difference is how the drone is going to navigate over the ceiling, with Design 1 and Design 3 both using ball bearing wheels that would just serve as a way to move. In that case, movement will be handled by the drone itself, reducing the design complexity. Design 2 uses motorized wheels, which runs using its own motor, this will allow the drone to move without compromising its vertical movements. One last difference is how they are controlled, all would have the same communications via WiFi with the main difference being that Design 1 and Design 3 using a standard drone controller, while Design 2 aims to use a phone app as its control.
-
-        \newpage
         \subsection{Design 1}
             This design includes an ultrasonic sensor in order to determine the distance between the drone and the ceiling/objects. We would have ball bearing wheels at the top in various selected locations. The drone would handle the movement both vertically and horizontally. In order to control the drone, we would be using a controller that communicates with the drone. The drone still would include a camera on top for image capturing.
 
@@ -289,6 +282,10 @@
                     \hline
                 
             \end{tabular}
+            \newpage
+
+        \subsection{Differences and Similarities Between Designs}
+            Our three designs are very similar in principle as they all have the goal of detecting when the drone is close to the ceiling and giving feedback to the system. The designs were built upon this principle, keeping the drone from hitting the ceiling. They also have ways in which they navigate while touching the ceiling. They all share a control system in which we communicate to it through a controller, what we usually see in standard drones. Although these designs are similar, they are quite different as we try to create variations that can hopefully determine the best outcome. Their main differences are the sensors that go on them. Design 1 uses an ultrasonic sensor while Design 2 uses a camera with imaging processing and Design 3 uses lasers. Each of these variations have their own strengths and weaknesses that vary with costs. However, they all achieve the same goal of telling the drone if there's an object overtop of it (and how close) in order to avoid collision. Another difference is how the drone is going to navigate over the ceiling, with Design 1 and Design 3 both using ball bearing wheels that would just serve as a way to move. In that case, movement will be handled by the drone itself, reducing the design complexity. Design 2 uses motorized wheels, which runs using its own motor, this will allow the drone to move without compromising its vertical movements. One last difference is how they are controlled, all would have the same communications via WiFi with the main difference being that Design 1 and Design 3 using a standard drone controller, while Design 2 aims to use a phone app as its control.
 
     \newpage
     \section{Selection of Best Alternative Design}
@@ -333,6 +330,15 @@
             After collecting the data from each member, we obtained a personalized comparison of each of our criteria. These data were then analyzed to obtain the geometric mean and weights. We then compare these data in a pair-wise comparison table and get an average of our weights. This way, we know what the team thinks of each criteria overall, with Time Needed being the highest weight at 0.257 and knowledge coming second at 0.22. We then proceed with giving a score to all criteria based on the design as a group. Finally, we input the data into our Final Decision Matrix. To our expectation, design 3 has the highest score of 3 after all the calculations. What surprised us was how close design 2 is to winning, with the score being 2.92. It would also mean there are certain factors of design 2 that seem to work out within our criteria. After some analysis, we try to understand what is good and will be incorporating it into our design 3 for the best overall results. This design features lasers as our sensors and wheels overtop that seems to fit most of our preference, we will also be attempting to incorporate the demo capability of design 2 into it to improve our final design.
 
     \newpage
+
+    \section{Preliminary Design}
+        \subsection{Level 1 Schematic}
+            \centerline{\includegraphics{./resources/level1.pdf}}
+        \subsection{Circuit Diagram}
+            \includegraphics[width=0.4\textwidth]{resources/esp32cam_wiring.jpg}
+        \subsection{Software Design}
+    \newpage
+
     \section{Bibliography}
     \centerline{\large \underline{\textbf{Works Cited}}} \vspace{0.5cm}
         % TODO: Switch this to using biber
@@ -348,6 +354,8 @@
         \hangingindent{[5] Become a drone pilot. Become a Drone Pilot | Federal Aviation Administration. (n.d.). Retrieved October 2, 2022, from \seqsplit{https://www.faa.gov/uas/commercial_operators/become_a_drone_pilot\#:~:text=In\%20order\%20to\%20fly\%20your,procedures\%20for\%20safely\%20flying\%20drones.}}
 
         \hangingindent{[6] Karanja, P. (2022, February 24). Guide to how much Drones Cost (2022). Droneblog. Retrieved October 2, 2022, from \seqsplit{https://www.droneblog.com/drones-cost/\#:~:text=The\%20average\%20cost\%20of\%20drones,need\%20to\%20spend\%20on\%20it}}
+
+        \hangingindent{[7] h, T., Microcontrollers Lab, Oliveira, R., Aravena, J., K., J., Zamri, S., \& Neely, J. (2021, February 14). \emph{ESP32-cam ai-thinker board - all about GPIO pins}. Microcontrollers Lab. Retrieved December 7, 2022, from \seqsplit{https://microcontrollerslab.com/esp32-cam-ai-thinker-pinout-gpio-pins-features-how-to-program}}
     
     \newpage
     \section{Appendices}

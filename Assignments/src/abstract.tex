@@ -1,0 +1,75 @@
+% Import Packages
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{underscore}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{hanging}
+\usepackage{seqsplit}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xurl}
+
+% Command for quick and easy bibliography
+\newcommand\hangingindent[1]{\begin{hangparas}{0.5in}{1} #1 \end{hangparas}\vspace{0.5cm}}
+
+% Command for coloring a table cell light gray and emboldening the text
+\newcommand\cellhead[1]{\cellcolor{lightgray}\textbf{ #1 }}
+
+% Change the color of hyperlinks to blue
+\renewcommand\UrlFont{\color{blue}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Wall Guys: Abstract}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{1cm}
+            \Huge\textbf{ECE 397: Abstract}
+
+                \vspace{0.5cm}
+                \LARGE Wallcopter Project
+    
+            \vspace{1.5cm}
+            \textbf{Team 13: Wall Guys}
+
+                \vspace{0.5cm}
+                Tien Dao, Hardik Goel, Jaden Mossman, and Anand Pudi
+
+                \Large
+                Sponsor: Dr Ahmet Enis Cetin
+
+                Instructor: Dr Matthew Alonso
+
+                \LARGE
+
+            \vfill             
+            \includegraphics[width=0.4\textwidth]{resources/uic_logo.png}
+
+            % ASSIGNMENT DESCRIPTION
+            \vspace{0.8cm}
+            University of Illinois Chicago\\
+            Spring 2023
+                
+        \end{center}
+    \end{titlepage}
+
+    \newpage
+
+    \section*{Abstract}
+    High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Even when reached, the unstable environment often caused the resulting images used for inspections to be blurry and sometimes hard to understand. The aim of the project is to allow our drone to remain stable at those heights and environment. Our objective is to design and modify an existing drone at a cheap price in order to meet our goals. The drone will have an additional attachment that includes a camera and sensors that will assist the drone in taking pictures. Additionally, there will be slide attachments overtop the drone, which will allow it to make contact with the upper surface and remain stable. All of these factors together allows us to obtain a stable image used for inspections.
+
+\end{document}

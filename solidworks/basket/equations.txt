@@ -1,0 +1,20 @@
+﻿"T"= 0.125in'Material Thickness
+
+"L_f"= 20mm'Length of front platform
+
+"L_m"= 70mm'Lenght of mid platform
+
+"L_b"= 20mm'Length of back platform
+
+"L_f_t"= 5mm'Length of front indent on top
+
+"L_b_t"= 15mm'Length of back indent on top
+
+"L_m_t"= "L_m" - "L_b_t" - "L_f_t"'Length of top platform
+
+"W"= 45mm'Width of basket
+
+"H"= 30mm'Height of basket
+
+"W_min"= round ( 1.25 * "T" )'Minimum width of parts
+

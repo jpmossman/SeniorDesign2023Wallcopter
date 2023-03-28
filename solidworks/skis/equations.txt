@@ -1,0 +1,12 @@
+﻿"prop-dist"= 70mm
+"prop-hole-depth"= 9mm
+"prop-hole-diameter"= 11mm"prop-hole-diameter-small"= 8.6mm
+"rivet-extension" = 12mm
+"rivet-hole-extension"= 7mm
+"rivet-hole-diameter"= 3.5mm
+"ski-length"= 100mm
+"th"= 0.125in'material thickness
+"ski-height"= 30mm
+"ski-curve-gap"= 60mm
+"ski-curve-height"= "rivet-hole-extension"
+"min-width"= 4mm

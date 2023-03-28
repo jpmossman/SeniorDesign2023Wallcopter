@@ -1,7 +1,6 @@
 import cv2
 
 def process_crack_image(img):
-
     return None, False
 
 def main():

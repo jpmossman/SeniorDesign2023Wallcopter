@@ -1,0 +1,3 @@
+﻿"prop_height"= 4.4mm
+"prop_th"= 2.4mm
+"prop_indent_height"= 2.4mm

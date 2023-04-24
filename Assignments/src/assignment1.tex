@@ -438,7 +438,6 @@
             This design features lasers as our sensors and wheels overtop that seems to fit most of our preference, we will also be attempting to incorporate the demo capability of design 2 into it to improve our final design.
 
     \newpage
-
     \section{Preliminary Design}
         \subsection{Level 1 Schematic}
             \centerline{\includegraphics{./resources/level1.pdf}}
@@ -446,8 +445,158 @@
             \includegraphics[width=0.4\textwidth]{resources/esp32cam_wiring.jpg}
         \subsection{Software Design}
         % TODO add software diagram
+    
     \newpage
+    \section{Testing}
+        \subsection*{Testing and Data}
+            Our group performed multiple tests in order to figure out the carry capacity of the Tello drone.
+            In our test, we used all the coins that the team could find as a weight to test (dime, pennies, and quarter).
+            We put all the coins into a ziplock bag and taped it at the bottom of the drone.
+            As we progressed through the many different versions, we stopped using the coin bag and used the actual add-on devices that were originally intended for the drone.
+            Our prototype designs also observed many test flights, which we won't include every flight due to the sheer amount of tests we did.
+            We will, however, include the most notable tests that we performed with meaningful or notable takeaways.
 
+            \subsubsection*{Data}
+            \begin{longtable}{ | m{1.5cm} | m{2cm}| m{3cm} | m{4cm} | m{4cm} |}
+                \\\hline
+                Test \# & Condition & Test Load & Result & Note \\\hline
+
+                1 & Indoor &
+                Full bag of coins &
+                Drone flew but didn't remain long in the air &
+                Failure might be due to the weight imbalance \\\hline
+
+                2 & Indoor &
+                Fewer coins &
+                Drone flew but is very unstable in the flight pattern &
+                The swinging of the bag is the cause for such instability \\\hline
+
+                3 & Indoor &
+                ESP-32 (10g) &
+                Stable flight &
+                Landing was not good due to the sensors at the bottom being obstructed by the ESP-32 \\\hline
+
+                4 & Indoor &
+                Stack of coins (55-60g) &
+                Stable flight &
+                Drone flew and maintained its balance in a stable manner. The drone overheated very quickly afterwards \\\hline
+
+                5 & Indoor &
+                No test load &
+                Successful flight &
+                Nothing much to note as we were testing out our control system using the computer \\\hline
+
+                6 & Indoor &
+                Basket version 1 along with ESP and ToF &
+                Flight observed but crashed after little time in the air &
+                The drone managed to lift off but could not maintain balance in the air. The lead to a crash as the drone swayed. \\\hline
+
+                7 & Indoor &
+                Tello frame &
+                Stable flight but crashed right after the drone touched the ceiling &
+                The drone flew in a stable manner, but once we tested out the ceiling touch, the frame would touch the propeller and crash the drone. \\\hline
+
+                8 & Indoor &
+                Slide and ski design &
+                Stable flight, some stable ceiling navigation but crash after some movement &
+                Similar to previous test, drone crashed due to the skis touching the propeller \\\hline
+
+                9 & Indoor &
+                Second basket design &
+                Failure to lift off &
+                The drone could not fly after multiple attempts \\\hline
+
+                10 & Indoor &
+                Third basket design &
+                Successful flight along with ceiling navigation &
+                Very smooth navigation with great ceiling movements. Landing was successful. \\\hline
+
+                11 & Indoor &
+                Third basket design with the ESP and ToF board &
+                Lift off but could not remain in the air for long &
+                Battery needed to be at full capacity to handle the heavy load. Drone is quick to overheat \\\hline
+
+                12 & Indoor &
+                Fourth basket design with all the components &
+                Successful flight with some minor stability issues &
+                The drone flew very well but had very minor balancing issues and leaned to one side \\\hline
+
+            \end{longtable}
+
+            \subsubsection*{Conclusions}
+                \newcommand{\teststatement}[3]{
+                    \vspace{0.5cm}\noindent\textbf{#1} (#2) - #3
+                }
+
+                \teststatement{Test 1} {All the coins and ziplock bag taped at the bottom} {
+                    The drone flew but did not remain in the air and would tumble down due to the weight imbalance.
+                    The team concluded the bad weight distribution to be the major factor that caused the failure.
+                }
+
+                \teststatement{Test 2} {Tying wire onto the drone and hanging the ziplock bag} {
+                    With the full amount of weight, the drone was still not able to fly in a stable manner.
+                    However, after we removed a lot of the coins, the drone flew.
+                    One thing to note is the swinging caused by the ziplock bag caused the drone to not have difficulty following commands.
+                }
+
+                \teststatement{Test 3} {Flying with the ESP-32 tapped into the drone} {
+                    Something to note is the problem of when the ESP-32 is taped on top of the Tello, the wings would be interfered with, preventing flight.
+                    The group decided to tape the ESP-32 at the bottom instead.
+                    The drone is observed to fly in a stable manner and there doesn't seem to be that much problem with it.
+                }
+
+                \teststatement{Test 4} {Coin stack at the payload limit of 60g taped directly on top of the drone} {
+                    The drone flew with good balance, navigating the way we intended.
+                    It was quick to overheat since some of the heat vents were taped over, preventing the drone from cooling effectively.
+                }
+
+                \teststatement{Test 5} {Testing using a computer as the control system} {
+                    The test was successful, the control was seamless.
+                    We managed to control the drone the same way that the Tello app can.
+                }
+
+                \teststatement{Test 6} {Using our first basket design we put the ESP and ToF on it then taped the basket to the bottom of the drone} {
+                    The result was unsuccessful, the drone could not fly when there was too much weight.
+                    When it managed to fly, balancing was a major issue leading to an eventual failure as we could not control the drone.
+                    Another thing to note is that the drone overheated even faster than test 5 as the heat vents were blocked by the basket.
+                }
+
+                \teststatement{Test 7} {Test using the Tello frame} {
+                    This test's purpose was due to our consideration of using either the Tello frame or our slide design for ceiling navigation.
+                    The frame was lightweight enough to help sustain a stable flight but failed when it comes to navigating on the ceiling.
+                    This is due to the frame's flexibility, it would bend and interfere with the propellers.
+                }
+
+                \teststatement{Test 8} {Test using the ski design} {
+                    We observe a stable flight similar to the previous test, but the drone crashes in a similar manner as the pins holding the skis touch the propeller.
+                    The takeaway from the test is that there should be a bridge in between the skis to provide some structural stability.
+                }
+
+                \teststatement{Test 9} {Second basket design along with the ESP and ToF} {
+                    The drone could not lift off due to the imbalance in the weight design.
+                    We tried many attempts even with adding extra coins on one end to try to offset the balance issue.
+                    All of these showed no results as the drone failed to lift off far past the ground.
+                }
+
+                \teststatement{Test 10} {Flying with third basket design} {
+                    This is our most successful flight with meaningful results so far.
+                    We had a successful lift off and landing along with great ceiling navigation.
+                    One thing to note is that the skis seem to need to be taller to allow more room for the ESP camera.
+                }
+
+                \teststatement{Test 11} {Flying with the third basket along with the ESP, ToF, Boost Converter, and battery} {
+                    The drone lifted off the first attempt but could not fly any higher.
+                    Subsequent attempts also failed to produce a liftoff as the drone was not at full battery.
+                    In a different day's test, the drone could fly at full battery but could only remain in the air for around 5-8 seconds.
+                }
+
+                \teststatement{Test 12} {Fourth basket along with all the components} {
+                    In this test, we did not try to confirm the ceiling maneuverability as the location that we tested in had a very high ceiling, and we were not comfortable in trying to move around on the ceiling.
+                    The drone lifted off successfully and could move around in a fairly stable manner.
+                    We did, however, observe some slight off balance issue when flying it and worked to try to rebalance the drone.
+                }
+    
+    \newpage
     \section{Bibliography}
     \centerline{\large \underline{\textbf{Works Cited}}} \vspace{0.5cm}
         % TODO: Switch this to using biber

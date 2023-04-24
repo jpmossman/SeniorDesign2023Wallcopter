@@ -70,11 +70,14 @@
     \tableofcontents
 
     \newpage
-
+    \section{Abstract}
+        High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically experience high wind. Even when reached, the unstable environment often causes the resulting images used for inspections to be blurry and difficult to analyze. The aim of the project was to identify an accessible drone platform, modify it for inspections, and maintain control to collect data with the drone at typical heights and environmental conditions. The drone has an additional attachment that includes a camera and sensors that will assist the drone in taking pictures. Additionally, there are slide attachments atop the drone, which allow it to make contact with the upper surface and remain stable. All of these factors together allow us to obtain a stable image used for inspections. The captured images will be sent to a receiving computer, where an image-detecting algorithm will detect any cracks or damages. We have used the DJI Tello and ESP 32 microcontroller for the project and have included additional prop guards to allow the drone to ceilings periodically. Our accomplishments include successfully designing and building the drone prototype, incorporating the necessary components, and testing its functionality in stable flight. After inspecting some nearby structures we were able to test the range and image quality of the pictures providing a cost-effective solution to structural engineers and those responsible for ensuring the safety of these structures. This inspection run can be found with the videos that we recorded.
+    
+    \newpage
     \section{Overview}
 
         \subsection{Project Goals}
-            The aim of this project is to develop a drone that can touch or get very close to the bottom side of a bridges or high rise buildings for inspection purposes. We are looking to make at least a prototype that can go up to the ceilings of most areas and can navigate via a wireless control system. Our priority is as follows: main focus on functionality, producing a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
+            The aim of this project is to develop an attachment onto a drone to allow additional features for inspection purposes. These inspections will be done in hard to reach places like under bridges or high rise buildings. We are looking to make at least a prototype that can go up to the ceilings of most areas and can navigate via a wireless control system. Our priority is as follows: main focus on functionality, producing a minimum working prototype, and then try to reduce the cost of the drone itself if possible.
 
         \subsection{Needs Statement}
             High rise buildings and the undersides of bridges are important structures that need to be examined for safety purposes, but this is often a difficult task as they are hard to reach places and typically windy and tough environments. Drones are often deployed to conduct these examinations, but there are limitations to their performance when coming into close contact with those surfaces. Another limitation is the lack of stable connection when the drone is a certain distance away from the user. These limitations, among others, provide a challenge to the autonomous examination of bridges and buildings.
@@ -87,7 +90,7 @@
             \begin{enumerate}[label=\Alph*.]
                 \item The basic concept that lays behind this wall-copter relies on the control system that keeps the copter stable to prevent collision or unintended side effect when approaching ceilings or walls. The current limitation lies on the unintended shifts of the blade speed when the copter gets too close to the wall's surface. The other factor is the difficulty of control when the drone gets too close to such a surface. Surprisingly, there don't seem to be any current remedies that exist in the market right now, so we do not have a way to compare our project to it. Still, there are current market competitors who offer drones with strong frames that are used for inspections using LiDAR mapping technology. Those drones, whoever do not approach the ceilings or navigate close to the effect of rotors being sucked into a surface. They have to remain within a distance of 1.5 times the size of the rotor from the upper wall to remain safe and stable [1]. There are other approaches to keeping the drone stable within these areas as there are studies focused on navigation via tilting the drone against the wall in order to ascend in a stable manner [2]. This research focuses on scaling vertically using the Tilt Motor Mechanism that results in some successes in keeping the drone stabilized enough for certain tasks. An existing prototype exists for that research, but it does not seem like they have a focus on releasing that product into the market [2]. One other alternative approach done by students from Shandong University of Science and Technology suggests creating a drone that would stick to walls/ceiling similar to geckos [4]. This particular design focuses on solving the problem of inspection when natural disasters occur, which is only similar to our objective but the designs would be very beneficial to keep in mind. Once again, this is only a test product, not meant for release in the market and would not be our direct competitor.
                 
-                \indent Upon further background research, we found out that a license would be required in order to fly certain types of drone [5]. Luckily, a license is not required for small indoor drones that are used for commercial purposes. So initial testing using indoor labs will not require such a license but will be different for outdoor tests. When looking into the drone market, typical drone prices vary quite a bit, from a very cheap price of 30 dollars that can go up to thousands [6]. Usually the bigger the drone and more functionality it offers, the more expensive the product will be. So in order to remain competitive, our drone need to be within a reasonable range of around 50-250 dollars, the amount that our budget would be allocated.
+                \indent Upon further background research, we found out that a license would be required in order to fly certain types of drone [5]. Luckily, a license is not required for small indoor drones that are used for commercial purposes. So initial testing using indoor labs will not require such a license but will be different for outdoor tests. When looking into the drone market, typical drone prices vary quite a bit, from a very cheap price of \$30 that can go up to thousands [6]. Usually the bigger the drone and more functionality it offers, the more expensive the product will be. So in order to remain competitive, our drone need to be within a reasonable range of around \$100-\$250, the amount that our budget would be allocated.
                 
                 \item Our background of this project is very clear from the beginning since it's a sponsored project, we still interviewed the professor to answer more questions we had. From this, we understand that the professor wants a product that currently does have strong competitors within the market space. 
                 \begin{enumerate}[label=\roman*.]
@@ -152,9 +155,12 @@
                 \noindent Long-lasting motors 0.23
 
             \end{multicols}
+        
+        \subsection{Additional Information}
+            Upon further research, we found additional inspection drones that are available in the market [8]. Those, however, are all very expensive as they are high-end drones that are usually manufactured for very specific tasks and are not flexible for its high price. On the high side of this, we have drones like the AscTec Falcon 8 that go up to \$48,000 in the market [9]. Even on the low side, drones like the DJI Inspire 2 would still go up to \$3,299 [10]. From this research, we also noted that there have yet to be any drones in the market with an elliptical ski design.
     
     \newpage
-    \section{Engineering Requirements}
+    \section{Engineering Requirements / Technical Specifications}
         \begin{longtable}{ | m{4.25cm} | m{5cm}| m{5.4cm} | }
             \hline
             Marketing Requirement & Engineering Requirement & Justification \\\hline
@@ -165,10 +171,10 @@
             The wall-copter should have standard drone speed of around 20 mph tops. &
             The device should be able to meet mechanical, and electrical requirements (IEEE 1937.1-2020) \\\hline
             4 &
-            The device should be within a reasonable price range of around \$50-\$250. &
+            The device should be within a reasonable price range of around \$100-\$250. &
             Although there isn't a requirement for prices, the device should follow standards for estimating costs (IEEE 3001.4-2020)\\\hline
             6 &
-            The wall-copter should be able to run for at least 15-20 minutes and is rechargeable. &
+            The wall-copter should be able to run for at least 10-15 minutes and is rechargeable. &
             The battery should follow IEEE guidelines for safety and usability (IEEE 1625-2008)\\\hline
             7 &
             The device should not emit any pollution and should not affect its surrounding environment too much. &
@@ -192,6 +198,11 @@
             The user should be able to operate the device after some basic training similar to how a normal drone should operate. &
             As the product require data to be collected for operations, it should also follow the drone data classification (IEEE 1936.1-2021) \\\hline
         \end{longtable}
+
+        \subsection{Non-Applicable Parameters}
+            Political: There isn't a current political aspect to our device as it is something that is used for inspection purposes. The only potential aspect would come from the privacy concerns that might come from the use of the drone for its unintended reason. That is something that every kind of drone would have by default. Since the locations our drone is made to inspect is hard reach in nature, we do not expect there to be any privacy issues.
+
+            Social and Cultural: Our drone does not have any social and cultural features that would fit as an engineering requirement. Its uses are only intended for technical reasons and should not have any social related issues or any form of cultural influence.
     
     \newpage
     \section{Engineering Design Alternatives}
@@ -248,7 +259,7 @@
                 \multirow{4}{3cm}{Functionality}
                     & - Precision flight control close to the roof. \\
                     & - Capturing images and using them for computer vision flight control. \\
-                    & - Live feedback of data through WiFi. \\
+                    & - Live feedback of data through Wi-Fi. \\
                     & - Navigation on the roof through motorized wheels. \\
                     \hline
                 
@@ -256,7 +267,7 @@
 
         \newpage
         \subsection{Design 3}
-            This design uses lasers placed in triangular configuration to triangulate the correct distance between the drone and the ceiling. It will also use ball bearing wheels as a way safely and efficiently navigate the ceiling. The drone will also be controlled by a standard controller that comes with the product.
+            This design uses lasers placed in triangular configuration to triangulate the correct distance between the drone and the ceiling. It will also be using some kind of ski device to assist in movement at the ceiling or rough surfaces. The drone will also be controlled by a standard controller that comes with the product.
 
             \vspace{0.5in}
             \centerline{\includegraphics{./resources/assignment3-Design3.schematic.drawio.pdf}}
@@ -278,14 +289,14 @@
                 \multirow{3}{3cm}{Functionality}
                     & - Using sensor data for stabilized flight control close to the roof. \\
                     & - Capturing image for building inspections. \\
-                    & - Using ball bearing wheels to maneuver close/on the roof. \\
+                    & - Using ski design to help device navigate at the top. \\
                     \hline
                 
             \end{tabular}
             \newpage
 
         \subsection{Differences and Similarities Between Designs}
-            Our three designs are very similar in principle as they all have the goal of detecting when the drone is close to the ceiling and giving feedback to the system. The designs were built upon this principle, keeping the drone from hitting the ceiling. They also have ways in which they navigate while touching the ceiling. They all share a control system in which we communicate to it through a controller, what we usually see in standard drones. Although these designs are similar, they are quite different as we try to create variations that can hopefully determine the best outcome. Their main differences are the sensors that go on them. Design 1 uses an ultrasonic sensor while Design 2 uses a camera with imaging processing and Design 3 uses lasers. Each of these variations have their own strengths and weaknesses that vary with costs. However, they all achieve the same goal of telling the drone if there's an object overtop of it (and how close) in order to avoid collision. Another difference is how the drone is going to navigate over the ceiling, with Design 1 and Design 3 both using ball bearing wheels that would just serve as a way to move. In that case, movement will be handled by the drone itself, reducing the design complexity. Design 2 uses motorized wheels, which runs using its own motor, this will allow the drone to move without compromising its vertical movements. One last difference is how they are controlled, all would have the same communications via WiFi with the main difference being that Design 1 and Design 3 using a standard drone controller, while Design 2 aims to use a phone app as its control.
+            Our three designs are very similar in principle as they all have the goal of detecting when the drone is close to the ceiling and giving feedback to the system. The designs were built upon this principle, keeping the drone from hitting the ceiling. They also have ways in which they navigate while touching the ceiling. They all share a control system in which we communicate to it through a controller, what we usually see in standard drones. Although these designs are similar, they are quite different as we try to create variations that can hopefully determine the best outcome. Their main differences are the sensors that go on them. Design 1 uses an ultrasonic sensor while Design 2 uses a camera with imaging processing and Design 3 uses lasers. Each of these variations have their own strengths and weaknesses that vary with costs. However, they all achieve the same goal of telling the drone if there's an object overtop of it (and how close) in order to avoid collision. Another difference is how the drone is going to navigate over the ceiling, with Design 1 using ball bearing wheels that would just serve as a way to move while Design 3 uses skis in order to slide while the drone itself performs the movement. In that case, movement will be handled by the drone itself, reducing the design complexity. Design 2 uses motorized wheels, which runs using its own motor, this will allow the drone to move without compromising its vertical movements. One last difference is how they are controlled, all would have the same communications via Wi-Fi with the main difference being that Design 1 and Design 3 using a standard drone controller, while Design 2 aims to use a phone app as its control.
 
     \newpage
     \section{Selection of Best Alternative Design}

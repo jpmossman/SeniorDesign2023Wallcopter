@@ -1,0 +1,14 @@
+﻿"th"= 0.125in
+"perf_length"= 70mm
+"perf_width"= 30mm
+"light_diameter"= 35mm
+"light_diamter_inner"= 23mm
+"light_thickness"= 3.2mm
+"usb_port_width"= 8.8mm
+"usb_port_height"= 3.2mm
+"usb_board_width"= 17.2mm
+"usb_board_thickness"= 1mm
+"D1@Sketch1"="light_diamter_inner"
+"D2@Sketch1"="th"
+"D3@Sketch1"="light_diameter"
+"D4@Sketch1"="perf_width"

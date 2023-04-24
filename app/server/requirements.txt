@@ -1,0 +1,4 @@
+Flask==2.2.3
+djitellopy==2.4.0
+opencv-python==4.7.0.68
+paho-mqtt==1.6.1

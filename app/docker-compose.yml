@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  server:
+    image: wallcopter-server
+    build: ./server
+    ports:
+      - "5000:5000"
+
+  broker:
+    image: eclipse-mosquitto:2
+    volumes:
+      - ./mosquitto/config/:/mosquitto/config/
+      - ./mosquitto/log/:/mosquitto/log/
+      - ./mosquitto/data:/mosquitto/data/
+    ports:
+      - 1883:1883
+      - 9001:9001

@@ -1,0 +1,28 @@
+{"rule":"CD_NN","sentence":"^\\Q4 Indoor Stack of coins (55-60g) Stable flight Drone flew and maintained its balance in a stable manner.\\E$"}
+{"rule":"COLLECTIVE_NOUN_VERB_AGREEMENT_VBP","sentence":"^\\Q1 Indoor Full bag of coins Drone flew but didn't remain long in the air Failure might be due to the weight imbalance\\E$"}
+{"rule":"NUMEROUS_DIFFERENT","sentence":"^\\QAs we progressed through the many different versions, we stopped using the coin bag and used the actual add-on devices that were originally intended for the drone.\\E$"}
+{"rule":"SOME_OF_THE","sentence":"^\\QIt was quick to overheat since some of the heat vents were taped over, preventing the drone from cooling effectively.\\E$"}
+{"rule":"PHRASE_REPETITION","sentence":"^\\QTest 4 Coin stack at the payload limit of 60g taped directly on top of the drone The drone flew with good balance, navigating the way we intended.\\E$"}
+{"rule":"IN_A_X_MANNER","sentence":"^\\QTest 8 Test using the ski design We observe a stable flight similar to the previous test, but the drone crashes in a similar manner as the pins holding the skis touch the propeller.\\E$"}
+{"rule":"LITTLE_BIT","sentence":"^\\QHowever, with proper use and care, it should still last only a little bit less if not the same amount of time as a standard drone.\\E$"}
+{"rule":"TO_NON_BASE","sentence":"^\\QOne other alternative approach done by students from Shandong University of Science and Technology suggests creating a drone that would stick to walls/ceilings similar to geckos [4].\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_BEGINNING_RULE","sentence":"^\\QAlternative Design 3 Concept Map.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QRecommended courses: ece uic control Original Sponsored Project Prompt.\\E$"}
+{"rule":"COMMA_COMPOUND_SENTENCE_2","sentence":"^\\QThe ECE labs and makerspace What is your specialty and how does that relate to this?\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QThe ECE labs and makerspace What is your specialty and how does that relate to this?\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDo you know what the university's policy on using the Rec Center's rockwall as a control environment would be?\\E$"}
+{"rule":"IN_OR_WITH_REGARDS_TO_OF","sentence":"^\\QWith regards to testing and demonstration, are there any recommended environments?\\E$"}
+{"rule":"UNIT_SPACE","sentence":"^\\Q1m cube?\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q“Aeryon Skyranger Leads the Pack in Texas Public Safety Drone Program.”\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q“Aeryon Skyranger Leads the Pack in Texas Public Safety Drone Program.”\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[9] Whittaker, BySarah.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[8] P. B. M. McNabb and Miriam McNabbMiriam McNabb is the Editor-in-Chief of DRONELIFE and CEO of JobForDrones, “The top 5 drones for inspections,” DRONELIFE, 17-Mar-2017.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[8] P. B. M. McNabb and Miriam McNabbMiriam McNabb is the Editor-in-Chief of DRONELIFE and CEO of JobForDrones, “The top 5 drones for inspections,” DRONELIFE, 17-Mar-2017.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[7] h, T., Microcontrollers Lab, Oliveira, R., Aravena, J., K., J., Zamri, S., & Neely, J. (2021, February 14).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[6] Karanja, P. (2022, February 24).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[4] Guo, Zhang, J., Ju, Y., & Guo, X. (2018).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QDroneblog.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QESP32-cam ai-thinker board - all about GPIO pins.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[3] Mattar, & Kalai, R. (2018).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[2] Myeong, & Myung, H. (2019).\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q[1] Tanabe, Sugiura, M., Aoyama, T., Sugawara, H., Sunada, S., Yonezawa, K., & Tokutake, H. (2018).\\E$"}
